@@ -1,0 +1,1 @@
+package io.github.miklires.mcodes;import java.util.*;public record RedemptionResult(Status status,UUID transactionId,CodeDefinition definition){public enum Status{ACCEPTED,NOT_FOUND,EXPIRED,LIMIT_REACHED,ALREADY_USED,SELF_REFERRAL}public static RedemptionResult rejected(Status s){return new RedemptionResult(s,null,null);}}
