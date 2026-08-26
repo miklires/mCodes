@@ -1,0 +1,6 @@
+promo-reward-commands:
+  - "give {player} diamond 1"
+referral-redeemer-commands:
+  - "give {player} emerald 3"
+referral-owner-commands:
+  - "give {player} emerald 1"
