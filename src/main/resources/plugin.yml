@@ -1,0 +1,14 @@
+name: mCodes
+version: ${version}
+main: io.github.miklires.mcodes.MCodesPlugin
+api-version: '26.2'
+author: miklires
+description: Transactional promo and referral codes
+folia-supported: true
+libraries: [com.h2database:h2:2.3.232]
+commands:
+  code: { description: Redeem and manage codes, usage: /code <redeem|create|delete|list|reload> }
+  refer: { description: Use or view referral code, usage: /refer [code] }
+permissions:
+  mcodes.use: { default: true }
+  mcodes.admin: { default: op }
