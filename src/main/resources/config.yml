@@ -1,6 +1,40 @@
-promo-reward-commands:
-  - "give {player} diamond 1"
-referral-redeemer-commands:
-  - "give {player} emerald 3"
-referral-owner-commands:
-  - "give {player} emerald 1"
+# mCodes creates durable promo/referral redemptions in plugins/mCodes/codes.mv.db.
+config-version: 2
+
+# Bundled UI languages: en_US and ru_RU.
+language: en_US
+
+security:
+  # Generated automatically on first start. Keep it private and unchanged.
+  identity-secret: ""
+
+anti-abuse:
+  identity-enabled: true
+  referral-per-identity: 1
+  promo-per-identity: 0
+
+requirements:
+  referral-minimum-playtime-seconds: 3600
+  promo-minimum-playtime-seconds: 0
+
+recovery:
+  # PENDING rewards are safe to retry. CLAIMED entries require staff review.
+  auto-retry-pending: true
+
+# Commands run as console after a successful transaction.
+# Supported placeholders: {player}; referral lists also support {referrer}/{redeemer}.
+# Keep commands idempotent where possible: after a hard crash Minecraft commands
+# cannot participate in the database transaction and may need manual reconciliation.
+rewards:
+  promo:
+    commands:
+      - "give {player} diamond 1"
+  referral:
+    redeemer-commands:
+      - "give {player} emerald 3"
+    owner-commands:
+      - "give {player} emerald 1"
+
+metrics:
+  enabled: true
+  bstats-id: 27942
