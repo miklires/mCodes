@@ -1,0 +1,3 @@
+package io.github.miklires.mcodes;
+import javax.crypto.Mac;import javax.crypto.spec.SecretKeySpec;import java.nio.charset.StandardCharsets;import java.util.HexFormat;
+public final class IdentityHasher {private final byte[] secret;public IdentityHasher(String secret){if(secret==null||secret.length()<32)throw new IllegalArgumentException("Identity secret must contain at least 32 characters");this.secret=secret.getBytes(StandardCharsets.UTF_8);}public String hash(String value){try{Mac mac=Mac.getInstance("HmacSHA256");mac.init(new SecretKeySpec(secret,"HmacSHA256"));return HexFormat.of().formatHex(mac.doFinal(value.getBytes(StandardCharsets.UTF_8)));}catch(Exception exception){throw new IllegalStateException("Cannot hash identity",exception);}}}
