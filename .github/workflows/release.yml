@@ -1,5 +1,5 @@
 name: release
-on: { release: { types: [published] } }
+on: { release: { types: [published] }, workflow_dispatch: {} }
 permissions: { contents: write }
 jobs:
   publish:
@@ -9,7 +9,7 @@ jobs:
       - uses: actions/setup-java@v5
         with: { distribution: temurin, java-version: '25' }
       - uses: gradle/actions/setup-gradle@v6
-      - run: ./gradlew clean build --no-daemon
+      - run: chmod +x gradlew && ./gradlew clean build --no-daemon
       - uses: softprops/action-gh-release@v2
         with: { files: build/libs/mCodes-*.jar }
       - run: ./gradlew modrinth
