@@ -1,7 +1,7 @@
 name: mCodes
 version: ${version}
 main: io.github.miklires.mcodes.MCodesPlugin
-api-version: '26.2'
+api-version: '26.3'
 author: miklires
 description: Transactional promo and referral codes
 folia-supported: true

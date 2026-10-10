@@ -75,7 +75,7 @@ Reward commands should still be designed to be idempotent where possible because
 ## Requirements
 
 - Java 25
-- Paper, Purpur or Folia 26.2
+- Paper, Purpur or Folia 26.3
 
 No economy, permissions or external database plugin is required. Reward commands may call any plugin already installed on the server.
 
