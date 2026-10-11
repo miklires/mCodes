@@ -35,7 +35,7 @@ mCodes provides ready-to-use promo codes and two-sided referral rewards. Limits,
 
 ## Quick start
 
-1. Put `mCodes-1.1.0.jar` in the server's `plugins` directory and restart.
+1. Put `mCodes-1.1.1.jar` in the server's `plugins` directory and restart.
 2. Keep the generated `security.identity-secret` private and unchanged.
 3. Adjust the reward commands in `plugins/mCodes/config.yml`.
 4. Create a campaign with `/code create WELCOME 100 1 168`.
@@ -89,6 +89,6 @@ Campaigns, redemptions and the recovery journal are stored in `plugins/mCodes/co
 ./gradlew clean build
 ```
 
-The release JAR is written to `build/libs/mCodes-1.1.0.jar`.
+The release JAR is written to `build/libs/mCodes-1.1.1.jar`.
 
 Licensed under the MIT License.
